@@ -41,3 +41,20 @@ handleSortChange = event => {
     this.setState({sortAsc: sortAsc});
     this.setState({filteredresults:sortItems( this.state.filteredresults,sortAsc)});
 };
+
+
+render() {
+    return (
+    <div>
+    <Header />
+    <SearchForm   
+            handleInputChange={this.handleInputChange}
+            />
+            <SearchResults handleSortChange={this.handleSortChange} results={this.state.filteredresults} sortAsc={this.state.sortAsc} />
+    </div>
+    );
+
+}
+}
+
+export default App;
