@@ -16,4 +16,12 @@ function SearchResults(props) {
     </tr>
 </thead>
 <tbody>
-    
+{props.results.map(result => (
+<tr key={result.Email}>
+    <th scope="row"> <img alt="Person" src={result.Image} className="img-fluid" /></th>
+    <td>{result.Name}</td>
+    <td>{result.Phone}</td>
+    <td>{result.Email}</td>
+    <td>{result.DOB}</td>
+</tr>
+))}
