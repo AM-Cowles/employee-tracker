@@ -25,3 +25,11 @@ function SearchResults(props) {
     <td>{result.DOB}</td>
 </tr>
 ))}
+</tbody>
+
+</table>
+
+);
+}
+
+export default SearchResults;
