@@ -24,3 +24,20 @@ class App extends Component {
         )
         .catch(err => console.log(err));
     }
+    handleInputChange = event => {
+
+        this.setState({filteredresults: sortItems( this.state.results
+        .filter(item => {
+            let values = Object.values(item).join("").toLowerCase()
+            return values.indexOf(event.target.value.toLowerCase()) !== -1;
+        }),this.state.sortAsc)
+        });
+    
+    };
+    
+handleSortChange = event => {
+    // this.setState({ search: event.target.value });
+    var sortAsc=!this.state.sortAsc;
+    this.setState({sortAsc: sortAsc});
+    this.setState({filteredresults:sortItems( this.state.filteredresults,sortAsc)});
+};
