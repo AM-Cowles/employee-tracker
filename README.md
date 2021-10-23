@@ -1,8 +1,8 @@
-# Employee Directory
+# Employee Tracker
 ## Description
-The Employee Directory is an application built using [React](https://reactjs.org/)
+The Employee Tracker is an application built using [React](https://reactjs.org/)
 
-The applicaiton is deployed through GitHub Pages through the following link: [The Employee Directory App](https://AM-Cowles.github.io/employee-tracker/)
+The applicaiton is deployed through GitHub Pages through the following link: [The Employee Tracker App](https://am-cowles.github.io/employee-tracker/)
 
 ## Table of Contents
 
