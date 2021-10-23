@@ -51,10 +51,10 @@ To install the application locally, follow the following steps:
 The application is used to access employee records quickly and be able to sort through the records easily. 
 
 ## How It Works
-Upon opening the application the user is presented with Employee Directory where the page is divided into React components
+Upon opening the application the user is presented with Employee Directory where the page is divided into React components.
 
 ### Header
-The Header component introduces the application and its functionality
+The Header component introduces the application and its functionality.
 
 ### Search
 The Seach component provides the user with the ability to search through the employee directory which is fetching the employees informaiton through [Random User API](https://randomuser.me/)
@@ -75,7 +75,7 @@ The List/Search Results component lists the fetched employee information which e
 ![Bootstrap-5](https://img.shields.io/badge/Bootstrap-blue)
 
 ## Deployed-Application
-The Employee Directory application is an application built using React and is deployed on GitHub Pages through the following link [The Employee Directory App](https://AM-Cowles.github.io/employee-tracker/)
+The Employee Tracker is an application built using React and is deployed on GitHub Pages through the following link [The Employee Tracker App](https://am-cowles.github.io/employee-tracker/)
 
 ## Tests
 The application is currently tested using the front-end. 
