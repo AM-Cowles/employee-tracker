@@ -62,7 +62,7 @@ The Seach component provides the user with the ability to search through the emp
 ### List/ Seach Results
 The List/Search Results component lists the fetched employee information which enables the user to search through or sort using the Name field of the list. 
 
-![Homepage](assets/Employee-Directory-Homepage.PNG)
+![Homepage](assets/Employee-Directory-Homepage.png)
 
 ## License
 ![APM](https://img.shields.io/apm/l/README)
