@@ -1,4 +1,5 @@
 # Employee Tracker
+
 ## Description
 The Employee Tracker is an application built using [React](https://reactjs.org/)
 
@@ -43,7 +44,7 @@ The applicaiton is deployed through GitHub Pages through the following link: [Th
 
 ## Local Installation
 To install the application locally, follow the following steps:
-1. Clone the repo on your local machine
+1. Clone the repo on your local machine.
 2. Run `npm install` in Visual Studio Code Integrated Terminal to install all the dependencies in the package.json
 3. Run `npm start` to run the application in a development mode, Open http://localhost:3000 to view it in the browser.
 
@@ -52,14 +53,15 @@ The application is used to access employee records quickly and be able to sort t
 
 ## How It Works
 Upon opening the application the user is presented with Employee Directory where the page is divided into React components.
+![How It Works](assets/Employee-Directory-how.mp4)
 
 ### Header
 The Header component introduces the application and its functionality.
 
 ### Search
-The Seach component provides the user with the ability to search through the employee directory which is fetching the employees informaiton through [Random User API](https://randomuser.me/)
+The Search component provides the user with the ability to search through the employee directory which is fetching the employees informaiton through [Random User API](https://randomuser.me/)
 
-### List/ Seach Results
+### List/Search Results
 The List/Search Results component lists the fetched employee information which enables the user to search through or sort using the Name field of the list. 
 
 ![Homepage](assets/Employee-Directory-Homepage.png)
