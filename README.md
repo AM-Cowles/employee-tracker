@@ -53,7 +53,7 @@ The application is used to access employee records quickly and be able to sort t
 
 ## How It Works
 Upon opening the application the user is presented with Employee Directory where the page is divided into React components.
-![How It Works](assets/Employee-Directory-how.mp4)
+![How It Works](assets/Employee-Directory-how.gif)
 
 ### Header
 The Header component introduces the application and its functionality.
