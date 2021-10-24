@@ -2,7 +2,7 @@
 ## Description
 The Employee Tracker is an application built using [React](https://reactjs.org/)
 
-The applicaiton is deployed through GitHub Pages through the following link: [The Employee Tracker App](https://am-cowles.github.io/employee-tracker/)
+The applicaiton is deployed through GitHub Pages through the following link: [The Employee Tracker App](https://employee-tracker-app-01.herokuapp.com/)
 
 ## Table of Contents
 
@@ -75,7 +75,7 @@ The List/Search Results component lists the fetched employee information which e
 ![Bootstrap-5](https://img.shields.io/badge/Bootstrap-blue)
 
 ## Deployed-Application
-The Employee Tracker is an application built using React and is deployed on GitHub Pages through the following link [The Employee Tracker App](https://am-cowles.github.io/employee-tracker/)
+The Employee Tracker is an application built using React and is deployed on GitHub Pages through the following link [The Employee Tracker App](https://employee-tracker-app-01.herokuapp.com/)
 
 ## Tests
 The application is currently tested using the front-end. 
