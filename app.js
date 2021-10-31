@@ -193,3 +193,44 @@ function addEmployeeByPaul() {
     })
 
 }
+function updateEmployeeByPaul() {
+    connection.query("Select * from employees", function (err, res) {
+    if (err) throw err;
+    //new list of first and last names
+    const names = res.map(element => {
+        return `${element.id}: ${element.firstName} ${element.lastName}`
+    })
+    connection.query("SELECT title, id from roles", function(err, success) {
+        if (err) throw err;
+        const roles = success.map(element => element.title);  
+        inquirer.prompt([
+        {
+            name: "who",
+            type: "list",
+            choices: names,
+            message: "Whom would you like to update?"
+        }, {
+            name: "roles",
+            type: "list",
+            message: "What is the title of their new role?",
+            choices: roles
+        }
+        ]).then(answers => {
+        console.log(answers);
+        const empIdToUpdate = answers.who.split(":")[0];
+        console.log(empIdToUpdate)
+        const chosenRole = success.find(element => {
+            return element.title === answers.roles
+        });
+        console.log(chosenRole.id);
+        connection.query("UPDATE employees SET roleId=? where id=?", [chosenRole.id, empIdToUpdate], function(err, yay) {
+            if (err) throw err;
+            console.log(`role successfully changed`)
+            areYouFinished();
+        })
+        
+        })
+    })
+    })
+
+}
