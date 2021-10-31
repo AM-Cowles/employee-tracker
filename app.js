@@ -345,3 +345,43 @@ function addRoles() {
         });
     })
 }
+
+// starts with inquirer to gather information to add
+// first and last name of employee to add
+// what role?
+// managerId?
+
+//with this info gathered, query mysql to add employee (INSERT INTO employees (firstNames, lastName, roleId, managerId) VALUES (**gathered values**))
+
+// edit employee, department, role
+
+// delete employee, department, role
+
+// CRUD with managers for bonus (CREATE READ UPDATE DELETE)
+
+function areYouFinished() {
+    inquirer.prompt([
+    {
+        type: "list",
+        name: "continue",
+        message: "Would you like to continue working?",
+        choices: [
+        {
+            name: "Yes",
+            value: true
+        },
+        {
+            name: "No",
+            value: false
+        }
+        ]
+    }
+    ]).then(function (answers) {
+    if (answers.continue) {
+        wwyltd()
+    } else {
+        console.log(`Goodbye`);
+        process.exit();
+    }
+    })
+}
