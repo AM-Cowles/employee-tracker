@@ -87,3 +87,23 @@ connection.query("SELECT id AS `ID`, department AS `Department` FROM departments
 
 });
 }
+function viewRoles() {
+    console.log("Selecting all roles...\n");
+    connection.query("SELECT title AS `Title`, salary AS `Salary`, depId AS `Department Id` FROM roles", function (err, res) {
+    if (err) throw err;
+      // Log all results of the SELECT statement
+    console.table(res);
+    areYouFinished();
+
+    });
+}
+function viewEmployee() {
+    console.log("Selecting all employees...\n");
+    connection.query("SELECT firstName AS `First Name`, lastName AS `Last Name`, roleId AS `Role Id` FROM employees", function (err, res) {
+    if (err) throw err;
+      // Log all results of the SELECT statement
+    console.table(res);
+    areYouFinished();
+
+    });
+}
