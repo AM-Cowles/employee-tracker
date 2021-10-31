@@ -107,3 +107,47 @@ function viewEmployee() {
 
     });
 }
+// add employee, department, role
+function updateRole() {
+    // we need to get the role data
+    connection.query("SELECT * FROM roles", function (err, res) {
+    if (err) throw err;
+    const roles = res.map(element => {
+        return element.id
+    })
+    inquirer
+        .prompt([
+        {
+            name: "firstName",
+            type: "input",
+            message: "What is their first name?"
+        },
+        {
+            name: "lastName",
+            type: "input",
+            message: "What is their last name?"
+        },
+        // ask role question based on role data
+        {
+            name: "roleId",
+            type: "list",
+            message: "What is their role id?",
+            choices: roles
+        }
+
+        ])
+        .then(function (answer) {
+        // when finished prompting, insert a new item into the db with that info
+        connection.query(
+            "INSERT INTO employees SET ?",
+            answer,
+            function (err) {
+            if (err) throw err;
+            console.log(`${answer.firstName} ${answer.lastName} was added successfully`);
+            // re-prompt the user for if they want to bid or post
+            areYouFinished();
+            }
+        );
+        });
+    })
+}
