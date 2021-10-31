@@ -302,3 +302,46 @@ function addDepartment() {
         });
     })
 }
+function addRoles() {
+    // we need to get the role data
+    connection.query("SELECT * FROM departments", function (err, res) {
+    if (err) throw err;
+    const departments = res.map(element => {
+        return element.id
+    })
+    inquirer
+        .prompt([
+        {
+            name: "title",
+            type: "input",
+            message: "What is their title?"
+        },
+        {
+            name: "salary",
+            type: "input",
+            message: "What is their salary?"
+        },
+        // ask role question based on role data
+        {
+            name: "depId",
+            type: "list",
+            message: "What is their department id?",
+            choices: departments
+        }
+
+        ])
+        .then(function (answer) {
+        // when finished prompting, insert a new item into the db with that info
+        connection.query(
+            "INSERT INTO roles SET ?",
+            answer,
+            function (err) {
+            if (err) throw err;
+            console.log(`${answer.title} was added successfully`);
+            // re-prompt the user for if they want to bid or post
+            areYouFinished();
+            }
+        );
+        });
+    })
+}
