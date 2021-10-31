@@ -91,7 +91,7 @@ function viewRoles() {
     console.log("Selecting all roles...\n");
     connection.query("SELECT title AS `Title`, salary AS `Salary`, depId AS `Department Id` FROM roles", function (err, res) {
     if (err) throw err;
-      // Log all results of the SELECT statement
+    // Log all results of the SELECT statement
     console.table(res);
     areYouFinished();
 
@@ -101,7 +101,7 @@ function viewEmployee() {
     console.log("Selecting all employees...\n");
     connection.query("SELECT firstName AS `First Name`, lastName AS `Last Name`, roleId AS `Role Id` FROM employees", function (err, res) {
     if (err) throw err;
-      // Log all results of the SELECT statement
+    // Log all results of the SELECT statement
     console.table(res);
     areYouFinished();
 
@@ -150,4 +150,46 @@ function updateRole() {
         );
         });
     })
+}
+function addEmployeeByPaul() {
+    connection.query("SELECT id, title from roles", function (err, res) {
+    if (err) throw err;
+    // const lastName = res.map(element => {
+    // return element.lastName
+    const roles = res.map(element => element.title)
+    inquirer.prompt([
+        {
+        name: "firstName",
+        type: "input",
+        message: "What is the new employees first name?"
+        },{
+        name: "lastName",
+        type: "input",
+        message: "What is the new employees last name?"
+        }, {
+        name: "roles",
+        type: "list",
+        message: "What is the title of their role?",
+        choices: roles
+        }
+    ]).then(answers => {
+        const chosenRole = res.find(element => {
+        return element.title === answers.roles
+        });
+        console.log(chosenRole.id);
+        const newEmployee = {
+        firstName: answers.firstName,
+        lastName: answers.lastName,
+        roleId: chosenRole.id
+        };
+        connection.query("INSERT INTO employees SET ?", newEmployee, (err, success) => {
+        if (err) throw err;
+        console.log(`${newEmployee.firstName} was added successfully`);
+        areYouFinished();
+        })
+
+    })
+
+    })
+
 }
