@@ -234,3 +234,40 @@ function updateEmployeeByPaul() {
     })
 
 }
+function addEmployee() {
+    // we need to get the role data
+    connection.query("SELECT * FROM employees", function (err, res) {
+    if (err) throw err;
+    const lastName = res.map(element => {
+        return element.lastName
+    })
+    inquirer
+        .prompt([
+        // ask role question based on role data
+        {
+            name: "lastName",
+            type: "list",
+            message: "Who's role would you like to update?",
+            choices: lastName
+        },
+        {
+            name: "newRole",
+            type: "input",
+            message: "What is their new role?"
+        }
+        ])
+        .then(function (answer) {
+        "UPDATE employees SET roleId = newRole WHERE condition;"
+        connection.query(
+            "INSERT INTO employees SET ?",
+            answer,
+            function (err) {
+            if (err) throw err;
+            console.log(`${answer.lastName}  was added successfully`);
+            // re-prompt the user for if they want to bid or post
+            areYouFinished();
+            }
+        );
+        });
+    })
+}
