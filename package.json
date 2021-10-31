@@ -1,5 +1,5 @@
 {
-    "name": "12-employee-management-system",
+    "name": "employee-tracker",
     "version": "1.0.0",
     "description": "",
     "main": "app.js",
@@ -16,7 +16,7 @@
     },
     "repository": {
     "type": "git",
-    "url": "git+https://github.com/tressapark/12-employee-management-system.git"
+    "url": "git+https://github.com/AM-Cowles/employee-tracker"
     },
     "author": "",
     "license": "ISC"
