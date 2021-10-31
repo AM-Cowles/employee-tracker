@@ -52,4 +52,38 @@ function wwyltd() {
         }
 
     ]
-    
+}]).then(({ doWhat }) => {
+    if (doWhat === "VIEW_EMPLOYEES") {
+    viewEmployee()
+    } else if (doWhat === "ADD_EMPLOYEE") {
+    addEmployeeByPaul()
+    } else if (doWhat === "ADD_ROLE") {
+    addRoles();
+    } else if (doWhat === "UPDATE_EMP") {
+    updateEmployeeByPaul();
+    }
+    else if (doWhat === "ADD_DEPT") {
+    addDepartment()
+    }
+    else if (doWhat === "VIEW_ROLES") {
+    viewRoles()
+    }
+    else if (doWhat === "VIEW_DEPT") {
+    viewDepartments()
+    }
+    else if (doWhat === "UPDATE_ROLE") {
+    updateRole()
+    }
+})
+}
+// view employees
+function viewDepartments() {
+console.log("Selecting all departments...\n");
+connection.query("SELECT id AS `ID`, department AS `Department` FROM departments", function (err, res) {
+    if (err) throw err;
+    // Log all results of the SELECT statement
+    console.table(res);
+    areYouFinished();
+
+});
+}
