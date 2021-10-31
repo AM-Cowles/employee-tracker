@@ -43,6 +43,10 @@ This is app is complete.
 ![Screenshot 1](/assets/Screen-Shot-4.png)
 ![Screenshot 1](/assets/Screen-Shot-5.png)
 
+### Walkthrough
+
+![Walkthrough Gif](instructions/employee-tracker.gif)
+
 ## License
 ![APM](https://img.shields.io/apm/l/README)
 
