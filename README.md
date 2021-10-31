@@ -10,8 +10,6 @@ Employee Tracker
 <a name="tech-used"></a>
 * [Build Status](#build-status)
 <a name="build-status"></a>
-* [Credits](#credits)
-<a name="credits"></a>
 * [License](#license)
 <a name="license"></a>
 * [Questions](#questions)
