@@ -6,8 +6,6 @@ Employee Tracker
 <a name="description"></a>
 * [Motivation](#motivation)
 <a name="motivation"></a>
-* [Contributors](#contributors)
-<a name="contributors"></a>
 * [Tech Used](#tech-used)
 <a name="tech-used"></a>
 * [Build Status](#build-status)
